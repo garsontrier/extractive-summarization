@@ -2,18 +2,21 @@
 Extractive Text Summarization for COVID-19 Articles
 
 Libraries used in the assignment
-------------------------
-import csv #read csv files
-import nltk # word tokenization
-import spacy #lemmatization and sentence boundary detection
-import json # read and write json files
-import os
-import numpy as np # matrix operations
-import string
-import random # initialization of x vector in PageRank algorithm
-from pysbd.utils import PySBDFactory #sentence boundary detection
-import xml.etree.ElementTree as ET # to parse topic xml file
-----------------------
+-------------------------------
+csv #read csv files
+
+nltk # word tokenization
+
+spacy #lemmatization and sentence boundary detection
+
+json # read and write json files
+
+numpy # matrix operations
+
+pysbd #sentence boundary detection
+
+xml # to parse topic xml file
+
 Python version 3.7
 
 You can install spaCy by the following commands:
