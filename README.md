@@ -1,23 +1,23 @@
 # extractive-summarization
 Extractive Text Summarization for COVID-19 Articles
 
-Libraries used in the assignment
--------------------------------
-csv #read csv files
+This mini project was implemented in June 2020 for Introduction to Information Retrieval course in Bogazici University.
 
-nltk # word tokenization
+It implements a modified version of PageRank Algorithm (a.k.a [LexRank](https://www.cs.cmu.edu/afs/cs/project/jair/pub/volume22/erkan04a-html/erkan04a.html)) to perform extractive text summarization on abstracts of COVID-19 articles in COVID-19 Open Research Dataset using relevance annotations provided by TREC-COVID Challenge. 
 
-spacy #lemmatization and sentence boundary detection
+For this project, 3 topics are selected for summarization:
+* Coronavirus origin
+* How does coronavirus spread?
+* How do people die from the coronavirus?
 
-json # read and write json files
+For each topic, top 10 most salient documents are determined and from those documents 20 sentences are selected as the summary of the topic.
 
-numpy # matrix operations
+-----------------
 
-pysbd #sentence boundary detection
+Python 3.7
 
-xml # to parse topic xml file
+Required libraries: csv, nltk, spac, json, numpy, pysbd, xml
 
-Python version 3.7
 
 You can install spaCy by the following commands:
 
@@ -35,17 +35,29 @@ For sentence boundary detection:
 pip: `pip install pysbd`
 
 ----------------------
-Program should be placed in same directory with all dataset and auxilary files.
+You need to download: 
+* [Dataset (1.5GB)](https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/historical_releases/cord-19_2020-04-10.tar.gz)
+* List of [topics](https://ir.nist.gov/covidSubmit/data/topics-rnd1.xml) (also available in the repo)
+* [Relevance judgements](https://ir.nist.gov/covidSubmit/data/qrels-rnd1.txt) (also available in the repo)
 
-Dataset files:
+
+Program should be placed in the same directory with all dataset and auxilary files.
+
+**Dataset files:**
+
 qrels-rnd1.txt
-04-10-mag-mapping.txt
+
+04-10-mag-mapping.txt (can be found inside the dataset folder)
+
 topics-rnd1.xml
 
-Auxilary files:
-lemmatized_dictionary.json
+**Auxilary files:**
+
+lemmatized_dictionary.json (not available due to size concerns but will be generated once the program run)
+
 vocabulary.txt
+
 idf_vector.npy
 
-Program can run without auxilary files and generate them during the execution. However,it takes a VERY long time since the corpus is quite big.
+Program can run without auxilary files and generate them during the execution. However, it takes a VERY long time since the corpus is quite big.
 I strongly recommend AGAINST running the program without the auxilary files. It may take hours to finish idf vector extraction.
