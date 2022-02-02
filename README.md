@@ -16,7 +16,7 @@ For each topic, top 10 most salient documents are determined and from those docu
 
 Python 3.7
 
-Required libraries: csv, nltk, spac, json, numpy, pysbd, xml
+Dependencies: csv, nltk, spaCy, json, numpy, pysbd, xml
 
 
 You can install spaCy by the following commands:
